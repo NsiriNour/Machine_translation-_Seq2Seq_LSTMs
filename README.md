@@ -1,32 +1,31 @@
-# 🌍 AI Translator: German-to-English Seq2Seq with Attention
+# AI Translator: German-to-English Seq2Seq LSTM
 
-An end-to-end Neural Machine Translation (NMT) system built from scratch using PyTorch. This project implements a Sequence-to-Sequence (Seq2Seq) architecture optimized with an **Attention Mechanism** to translate German sentences into English.
+A custom Neural Machine Translation (NMT) system built from scratch using **PyTorch**. This project implements the classic **Encoder-Decoder (Seq2Seq)** architecture to translate German sentences into English using the **Multi30K** dataset.
 
-## 🚀 Features
-- **Encoder-Decoder Architecture:** Built using LSTMs/GRUs.
-- **Attention Mechanism:** Implemented a Bahdanau-style attention to handle long-range dependencies and improve translation accuracy.
-- **Custom Data Pipeline:** Modern implementation using Hugging Face `datasets` and `SpaCy` tokenizers, bypassing deprecated `torchtext` utilities.
-- **Interactive UI:** A fully functional web interface built with **Gradio** for real-time testing.
-- **Performance Metrics:** Evaluated using **BLEU Score** and **Perplexity**.
+## 🚀 Project Overview
+This project explores the foundations of NMT. It uses a "Vanilla" Seq2Seq approach where the entire meaning of a source sentence is compressed into a single **Context Vector**.
 
-## 📊 Performance
-- **Dataset:** Multi30K (German-English)
-- **Training:** 20 Epochs on CPU/GPU
-- **Best BLEU Score:** [INSERT YOUR SCORE HERE, e.g., 28.50]
-- **Key Metric:** Successfully eliminated word repetition and "forgetting" through the Attention layer.
+### Key Features:
+- **Architecture:** Multi-layer LSTM Encoder and Decoder.
+- **Data Pipeline:** Specialized IBM-style `Multi30K_de_en_dataloader.py` for text preprocessing and numericalization.
+- **Inference:** Greedy Search decoding for real-time translation.
 
-### Loss Curve
-![Loss Graph]([INSERT_LINK_TO_YOUR_GRAPH_IMAGE_HERE])
-*The graph shows a healthy convergence between Training and Validation loss, indicating effective generalization.*
+## 📊 Training Results
+Trained for 15 epochs on a CPU. Despite the lack of an attention mechanism, the model achieved significant convergence:
+- **Initial Loss:** 5.29
+- **Final Loss:** ~2.70
+- **Final Perplexity (PPL):** Successfully dropped from 198 to below 20.
+
+### The Learning Curve
+<img width="1016" height="614" alt="image" src="https://github.com/user-attachments/assets/396b01cc-e553-4af1-8497-197078392cc1" />
+
+*The smooth downward trend proves that the LSTM successfully learned to map German syntax to English semantics.*
 
 ## 🛠️ Tech Stack
-- **Framework:** PyTorch
-- **Data:** Hugging Face `datasets`
-- **NLP:** SpaCy, NLTK (BLEU)
-- **Interface:** Gradio
-- **Development:** Python, Jupyter Notebook
+- **Framework:** PyTorch (nn, optim, functional)
+- **NLP:** SpaCy, NLTK
+- **Development:** Python 3.12, Miniconda
 
-## 💻 Installation & Usage
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/[YOUR_USERNAME]/ai-translator-lstm.git
+## 🧠 Future Work
+- **Attention Mechanism:** Implementing a Bahdanau Attention layer to improve performance on longer sentences.
+- **Transformers
