@@ -28,4 +28,4 @@ Trained for 15 epochs on a CPU. Despite the lack of an attention mechanism, the 
 
 ## 🧠 Future Work
 - **Attention Mechanism:** Implementing a Bahdanau Attention layer to improve performance on longer sentences.
-- **Transformers
+- **Transformers**
