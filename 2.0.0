@@ -1,0 +1,2 @@
+Requirement already satisfied: portalocker in c:\users\nour\miniconda3\envs\cnn\lib\site-packages (3.2.0)
+Requirement already satisfied: pywin32>=226 in c:\users\nour\miniconda3\envs\cnn\lib\site-packages (from portalocker) (311)
